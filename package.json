@@ -1,0 +1,23 @@
+{
+  "name": "todo_api",
+  "version": "1.0.0",
+  "description": "simple todo application practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "restful-api-practice"
+  },
+  "keywords": [
+    "newproject",
+    "todo-application-interface"
+  ],
+  "author": "elijah",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {}
+}
