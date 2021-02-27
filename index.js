@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+app.use(express.json());
 
 //CRUD
 // list many items GET/routines
@@ -43,13 +43,21 @@ app.get('/routines/:id',function (req,res) {
     let id = req.params.id;
     let routine = routines.find(function(routine){
         return routine.id === parseInt(id);
-    })
+    });
     if(!routine){
-        return res.send("the routine not found. thanks")
+        return res.status(404).send("the routine not found. thanks");
     }
     console.log("routine selected", routine);
     return res.send(routine);
 })
+app.post( '/routines', function (req,res) {
+   console.log("request has a body", req.body);
+   let newRoutine = req.body;
+   routines.push(newRoutine);
+    return res.send("well done!");
+
+})
+
 
 app.listen(8000,function () {
     console.log("progressing with web app building");
